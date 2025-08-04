@@ -2,29 +2,30 @@ import json
 import base64
 from langchain_community.tools.gmail.utils import build_resource_service
 
-# --- Hata Ayıklama Kodu ---
+# --- Debugging Code ---
+# This code can be used to examine the payload of a specific email.
 
-# 1. Adım: Buraya sorunlu e-postanın ID'sini yapıştırın
-specific_message_id = ""  # Örnek ID, sorunlu e-postanızın ID'sini kullanın
+# Step 1: Paste the ID of the problematic email here.
+specific_message_id = ""  # Sample ID, use the ID of your problematic email
 
-# Kimlik doğrulama
+# Identity verification
 api_resource = build_resource_service()
 
 try:
-    print(f"'{specific_message_id}' ID'li e-postanın payload'u inceleniyor...\n")
+    print(f"Examining the payload of the email with ID '{specific_message_id}'...\n")
     
-    # O e-postanın tüm detaylarını isteyelim
+    # Let's request all the details of that email.
     message_detail = api_resource.users().messages().get(
         userId='me', 
         id=specific_message_id, 
         format='full'
     ).execute()
     
-    # Sadece içerik yapısını (payload) inceleyelim
+    # Let's just examine the content structure (payload).
     payload = message_detail.get('payload', {})
     
-    # Dönen payload'un tamamını, okunaklı bir formatta ekrana basalım
+    # Let's print the entire rotating payload to the screen in a readable format.
     print(json.dumps(payload, indent=2))
 
 except Exception as e:
-    print(f"Bir hata oluştu: {e}")
+    print(f"An error has occurred: {e}")
