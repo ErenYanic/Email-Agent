@@ -1,20 +1,77 @@
-# =============================================================================
-# ENVIRONMENT VARIABLES & API KEYS / ÇEVRE DEĞİŞKENLERİ VE API ANAHTARLARI
-# =============================================================================
-.env
-.env.local
-.env.production
-.env.staging
-.envrc
-.env-*/
+# Large datasets (uncomment if needed)
+*.csv
+*.txt
+*.json
+*.parquet
+*.feather
+*.xlsx
 
-# =============================================================================
-# PYTHON
-# =============================================================================
+# Operating system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Git merge artifacts
+*.orig
+*.rej
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.envrc
+
+# Certificates and private keys
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# API keys and tokens
+*.token
+secrets.json
+client_secret.json
+credentials.json
+.netrc
+
+# Cloud provider credentials
+.aws/
+.gcp/
+.azure/
+
+# Docker credentials
+.dockercfg
+.docker/config.json
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+db.sqlite3-journal
+
+# Log files
+*.log
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
+*.py[codz]
 *$py.class
 
 # C extensions
@@ -60,7 +117,6 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
-*.py,cover
 *.py.cover
 .hypothesis/
 .pytest_cache/
@@ -70,17 +126,14 @@ cover/
 *.mo
 *.pot
 
-# Django stuff:
-*.log
+# Django stuff
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
 
-# Flask stuff:
+# Flask stuff
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy stuff
 .scrapy
 
 # Sphinx documentation
@@ -102,51 +155,42 @@ ipython_config.py
 #   intended to run in multiple environments; otherwise, check them in:
 # .python-version
 
-# Virtual environments
-venv/
-.venv/
-env/
-ENV/
-env.bak/
-venv.bak/
-.env-*/
-virtualenv/
-
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
-#Pipfile.lock
+# Pipfile.lock
 
 # UV
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
-#uv.lock
+uv.lock
+uv_*
 
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-#poetry.toml
+# poetry.lock
+# poetry.toml
 
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
 #   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
 #   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
-#pdm.lock
-#pdm.toml
+# pdm.lock
+# pdm.toml
 .pdm-python
 .pdm-build/
 
 # pixi
 #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-#pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
+#   Pixi creates a virtual environment in the .pixi directory. It is recommended not to include
+#   this directory in version control.
+# pixi.lock
 .pixi
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
@@ -158,6 +202,14 @@ celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
+
+# Virtual environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -183,90 +235,19 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# Ruff stuff:
-.ruff_cache/
-
-# PyPI configuration file
-.pypirc
-
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
-
-# =============================================================================
-# MACHINE LEARNING / AI MODELS
-# =============================================================================
-
-# Model files
-*.h5
-*.hdf5
-*.pkl
-*.pickle
-*.joblib
-*.pth
-*.pt
-*.onnx
-*.pb
-*.tflite
-*.model
-*.weights
-*.bin
-*.safetensors
-models/
-checkpoints/
-weights/
-saved_models/
-model_checkpoints/
-
-# TensorFlow
-*.ckpt
-*.ckpt.*
-*.meta
-*.index
-checkpoint
-
-# PyTorch
-lightning_logs/
-
-# Hugging Face
-transformers_cache/
-.cache/huggingface/
-
-# Weights & Biases
-wandb/
-
-# MLflow
-mlruns/
-mlartifacts/
-
-# =============================================================================
-# NODE.JS
-# =============================================================================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.npm
-.yarn-integrity
-
-# =============================================================================
-# IDE/EDITORS
-# =============================================================================
-
-# Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#  you could uncomment the following to ignore the entire vscode folder
-.vscode/
-
-# PyCharm
+# PyCharm / JetBrains IDEs
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
+
+# Visual Studio Code
+#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
+#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+#  and can be added to the global gitignore or merged into this file.
+.vscode/
+*.code-workspace
 
 # Cursor
 #  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
@@ -275,97 +256,19 @@ yarn-error.log*
 .cursorignore
 .cursorindexingignore
 
-# Generic editor files
-*.swp
-*.swo
-*~
+# Ruff
+.ruff_cache/
 
-# =============================================================================
-# OPERATING SYSTEM FILES / İŞLETİM SİSTEMİ DOSYALARI
-# =============================================================================
+# PyPI configuration file
+.pypirc
 
-# macOS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-
-# Windows
-ehthumbs.db
-Thumbs.db
-
-# =============================================================================
-# DATA FILES / VERİ DOSYALARI
-# =============================================================================
-
-# Large datasets (uncomment if needed)
-*.csv
-*.json
-*.parquet
-*.feather
-*.xlsx
-data/
-dataset/
-datasets/
-raw_data/
-processed_data/
-
-# Database files
-*.sqlite
-*.sqlite3
-*.db
-
-# =============================================================================
-# MEDIA FILES / MEDYA DOSYALARI
-# =============================================================================
-
-# Large media files for datasets (commented out by default)
-# Uncomment these lines if you want to ignore large media files
-# *.jpg
-# *.jpeg  
-# *.png
-# *.gif
-# *.bmp
-# *.tiff
-# *.mp4
-# *.avi
-# *.mov
-# *.mkv
-# *.webm
-# images/
-# videos/
-
-# Audio files for large datasets (commented out by default)
-# *.wav
-# *.mp3
-# *.flac
-# *.aac
-# *.ogg
-# audio/
-# sounds/
-
-# =============================================================================
-# LOG & TEMPORARY FILES / LOG VE GEÇİCİ DOSYALAR
-# =============================================================================
-
-# Log files
-*.log
-logs/
-
-# Temporary files
-*.tmp
-*.temp
-.cache/
-
-# Backup files
-*.bak
-*.backup
-
-# =============================================================================
-# ABSTRA
-# =============================================================================
-# Abstra is an AI-powered process automation framework.
-# Ignore directories containing user credentials, local state, and settings.
-# Learn more at https://abstra.io/docs
+# Abstra
+#  Abstra is an AI-powered process automation framework.
+#  Ignore directories containing user credentials, local state, and settings.
+#  Learn more at https://abstra.io/docs
 .abstra/
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
